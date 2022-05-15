@@ -5,14 +5,17 @@
   "homepage": "https://xiongemi.github.io/nx-expo-poetry/",
   "scripts": {
     "eas-android": "EAS_LOCAL_BUILD_SKIP_CLEANUP=1 EAS_LOCAL_BUILD_WORKINGDIR=/Users/emilyxiong/Code/tmp/eas-expo-poetry-android eas build --platform android  --profile preview --local",
-    "eas-build-pre-install": "cd ../../ && cp package-lock.json ./apps/poetry-app/",
+    "eas-build-pre-install": "cd ../../ && cp yarn.lock ./apps/poetry-app/",
     "eas-ios": "EAS_LOCAL_BUILD_SKIP_CLEANUP=1 EAS_LOCAL_BUILD_WORKINGDIR=/Users/emilyxiong/Code/tmp/eas-expo-poetry-ios eas build --platform ios  --profile preview --local",
-    "postinstall": "rm -r node_modules && cd ../../ && npm install &&  npx nx sync-deps poetry-app && npx nx ensure-symlink poetry-app"
+    "postinstall": "rm -r node_modules && cd ../../ && yarn install && npx nx sync-deps poetry-app && npx nx ensure-symlink poetry-app",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo/metro-config": "*",
     "@nrwl/expo": "*",
-    "@react-native-async-storage/async-storage": "*",
+    "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-navigation/native": "*",
     "@react-navigation/native-stack": "*",
     "@reduxjs/toolkit": "*",
@@ -27,19 +30,23 @@
     "expo-structured-headers": "*",
     "expo-updates": "*",
     "history": "*",
-    "react": "*",
-    "react-native": "*",
+    "react": "17.0.1",
+    "react-native": "0.64.3",
     "react-native-gesture-handler": "*",
     "react-native-paper": "*",
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
-    "react-native-svg": "*",
+    "react-native-svg": "12.1.1",
     "react-native-vector-icons": "*",
     "react-native-web": "*",
     "react-redux": "*",
     "redux-logger": "*",
     "redux-persist": "*",
-    "string-similarity": "*"
+    "string-similarity": "*",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
   }
 }

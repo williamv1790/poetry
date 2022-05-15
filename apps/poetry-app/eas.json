@@ -7,7 +7,7 @@
     },
     "development": {
       "android": {
-        "developmentClient": true,
+        "developmentClient": false,
         "distribution": "internal"
       }
     },

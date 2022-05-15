@@ -15,6 +15,7 @@ import {
   IconButton,
   Provider as PaperProvider,
 } from 'react-native-paper';
+import { add } from 'react-native-reanimated';
 import { Provider as StoreProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -25,6 +26,7 @@ import PoemResult from './poem-result/poem-result';
 import Search from './search/search';
 
 const App = () => {
+  add(2, 3);
   const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
